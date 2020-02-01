@@ -1,5 +1,5 @@
-# Create your own repository in Github#
-git clone https://github.com/arijitd2/Web-Dev.git
+# Create your own repository in Github as Web Dev#
+git clone https://github.com/<your-username>/Web-Dev.git
 git checkout -b Java
 notepad class
 git add .

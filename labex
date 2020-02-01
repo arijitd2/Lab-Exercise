@@ -1,0 +1,24 @@
+# Create your own repository in Github#
+git clone https://github.com/arijitd2/Web-Dev.git
+git checkout -b Java
+notepad class
+git add .
+git commit -m 'Java version 2.0'
+git checkout master
+git checkout -b JScript
+notepad script
+git add .
+git commit -m 'JScript version 2.0'
+git branch
+* JScript
+  Java
+  master
+git status
+git checkout master
+git merge Java
+git merge JScript
+git branch -d Java
+git branch -d JScript
+git push origin master
+git log -n 2 
+git remote -v

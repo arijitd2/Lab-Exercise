@@ -1,0 +1,10 @@
+Step 1: Install Java and Jenkins 
+Step 2: Launch Jenkins http://localhost:8080/
+Step 3: Click on Manage Jenkins
+Step 4: Click on New Item on the left hand menu.
+Step 5: Put in a name for the project - Eg: my-first-jenkins-job. Select 'Free-style project' and Click OK.
+Step 6: Click on Add Build Step and Select Execute Shell for Linux machine or Select Execute Windows batch command for Windows machine.
+Step 7: In the Command window : Type "Hello BITS"
+Step 8: Click on Save
+Step 9: Run the job/project by going back to the dashboard and clicking on the green icon where your job is displayed. Or you can click on the project and click on Build Now in the left hand navigation bar.
+Step 10: Observe the build results in Console output.

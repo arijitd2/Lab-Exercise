@@ -1,0 +1,28 @@
+Steps to be followed:
+•	Task 1: Start SonarQube service through StartSonar.batch file  
+•	Task 2: integrate SonarQube with Jenkins (perform below steps to complete this task)
+a)	Launch Jenkins and Click on Manage Jenkins
+b)	Click on Manage Plugins
+c)	Click on 'Available' tab and Search for 'SonarQube scanner' and click on the check box.  Then Search for 'SONAR quality gates' and click on the check box.
+d)	At the end of the page and click on 'Install without restart'.
+
+•	Task 3: Configure SONAR on Jenkins (Perform below steps to complete this task)
+a)	Open http://localhost:9000 (Sonar default port) on a browser. Login using admin/admin. Click on 'My Account', 'Generate Token' and copy the token.
+b)	In Jenkins, Click on 'Manage Jenkins' and open 'Configure System'
+c)	Under 'SonarQube servers', click on 'Add SonarQube'. And Put in a name for SonarQube Server. Eg: MySonarServer. Provide Server URL. (Default port on which SonarQube server runs is http://localhost:9000). In 'Server Authentication Token' put the token copied in step a.
+d)	Under 'Quality Gates - SonarQube', click on 'Add Sonar instance'.
+Then provide name for SonarQube Server. Eg: MySonarServer.
+Give SonarQube Server URL (Default port on which SonarQube server runs is http://localhost:9000). Add SonarQube account token copied from step a).
+e)	Click on 'Save'
+
+•	Task 4: Install the SonarQube Scanner through Jenkins(Perform below steps to complete this task)
+a)	Click on 'Global Tool Configuration', Under 'SonarQube Scanner', click on 'SonarQube Scanner Installations'.
+b)	Put in a name for SonarQube scanner. Eg: mySonarScanner.
+c)	Click on 'Install Automatically' and click on 'Save'.
+
+•	Task 4: Perform Continuous Inspection through Sonar.
+a)	Create maven based project in Jenkins and provide source code URL of GIT
+b)	Click on 'Add Build Step' and 'Click on Execute SonarQube Scanner’ and Under Analysis Properties, provide the following.
+sonar.projectKey, sonar.projectName, sonar.projectVersion, and path to your source code				
+c)	Click on 'Post-build Actions' and click on 'Quality Gates Sonar' Plugin. And give Project Key (Note: The key has to be the same as the one mentioned in the previous step). Then under 'Job status when analysis fails', mention FAILED.
+d)	Build the project and observe the console output. Also see the SONAR project created with the Sonar metrics and analysis in http://localhost:9000.
